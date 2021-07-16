@@ -14,6 +14,7 @@ struct Pair getMinMAx(int a[], int n){
     if(n==1){
         minmax.min = a[0];
         minmax.max = a[0];
+        return minmax;
     }
     
     if(a[0]>a[1]){
