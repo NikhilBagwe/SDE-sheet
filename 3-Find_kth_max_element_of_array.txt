@@ -1,0 +1,40 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    priority_queue<int> pq;
+    
+    int n,k;
+    cout<<"Enter size of array: ";
+    cin>>n;
+    
+    for(int i =0; i<n;i++){
+        int a;
+        cin>>a;
+        pq.push(a);
+    }
+    
+    // To o/p the heap - but don't use it as it deletes the heap
+    // for(int i=0; i<n;i++){
+    //     cout<<pq.top()<<" ";
+    //     pq.pop();
+    // }
+    
+    cout<<"Enter position at which element to find: "<<endl;
+    cin>>k;
+    
+    // pop elements until you reach the kth max element
+    int i=1;
+    while(!pq.empty()){
+        if(i==k){
+            cout<<k<<" Maximum element: "<<pq.top()<<endl;
+            break;
+        }
+        i++;
+        pq.pop();
+    }
+
+    return 0;
+}
