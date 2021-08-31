@@ -1,7 +1,43 @@
 // ---- FIRST APPROACH WILL HAVE AN 0(N^3) COMPLEXITY -------------------------------------------------------------------------//
 
-- ITEARTE OVER ALL THE SUB-ARRAYS USING 3 LOOPS
+// - ITEARTE OVER ALL THE SUB-ARRAYS USING 3 LOOPS
 
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0; i<n; i++) cin>>a[i];
+    
+    // INT_MIN bcoz the max value can be negative also
+    int max = INT_MIN;
+    
+    for(int i=1; i<=n; i++){
+        
+        for(int j=i; j<=n; j++){
+            int sum = 0;
+            
+            for(int k=i; k<=j; k++){
+                sum += a[k];
+            }
+            
+            if(sum > max){
+                max = sum;
+            }
+        }
+    }
+    
+    cout<<max;
+    return 0;
+}
+
+// test case -  7
+//              7 5 -13 5 10 -2 5
+// o/p - 18
 
 // ---- SECOND APPROACH WILL HAVE AN 0(N^2) COMPLEXITY ------------------------------------------------------------------------//
 
