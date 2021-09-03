@@ -12,7 +12,7 @@ int getJump(int arr[], int n){
     int jump = 1; 
     
     // when array has only one element
-    if(n == 0) return 0;
+    if(n == 1) return 0;
     // when the 1st element itself is 0, means we can never jump from there
     else if(arr[0] == 0) return -1;
     
