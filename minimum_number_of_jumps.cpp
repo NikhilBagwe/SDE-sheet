@@ -25,6 +25,7 @@ int getJump(int arr[], int n){
             
             // We know maxReach=1, so when we go to next element arr[1] i.e 3, then maxReach=3 means we can go till arr[4] from 
             // arr[1]. So add i to arr[1] to keep a track of maxReach/ update maxReach
+            // here we consider the previous maxReach count i.e 1 and add the new maxReach to it i.e 3 in our example
             maxReach = max(maxReach, i+arr[i]);
             // since we moved forward, reduce step 
             step--;
