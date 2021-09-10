@@ -6,9 +6,6 @@ int main()
     int a2[] = {0, 2, 6, 8, 9};
     int n = 4, m =5;
     
-    sort(a1, a1+n);
-    sort(a2, a2+m);
-    
     int temp[n+m];
     int i = 0, j = 0, k = 0;
     
