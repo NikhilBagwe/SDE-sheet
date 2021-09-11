@@ -64,7 +64,7 @@ int main()
 }
 
 
-// ---- THIRD APPROACH WILL HAVE AN 0(N) COMPLEXITY ------------------------------------------------------------------------//
+// ---- THIRD APPROACH WILL HAVE AN 0(N) COMPLEXITY -------------------------------- GREEDY APPROACH ----------------------------------------//
 
 int main()
 {
@@ -87,21 +87,21 @@ int main()
     return 0;
 }
 
-// ---- FOR ALL NEGATIVE ELEMENTS ------------------------------------------------------------------------//
-
-
-#include <iostream>
-#include<bits/stdc++.h>
-using namespace std;
+// ---- HANDLES BOTH POSITIVE AND NEGATIVE ELEMENTS ------------------------------ DYNAMIC PROG. APPROACH ----------------------------------------//
 
 int main()
 {
-    int arr[] ={-1,-20,-3,-2,-5};
-    int maxSum =INT_MIN, curSum=0;
+    int a[] = {-2, -3, 4, -1, -2, 1, 5, -3};
+    int n = 8;
+    int curSum = a[0];
+    int maxSum = a[0];
     
-    for(int i=0; i<5; i++){
-        maxSum = max(maxSum,arr[i]);
+    for(int i=1; i<n; i++){
+        curSum = max(a[i], curSum+a[i]);
+        maxSum = max(maxSum, curSum);
     }
-    cout<<maxSum<<endl;
+    
+    cout<<maxSum;
+    
     return 0;
 }
