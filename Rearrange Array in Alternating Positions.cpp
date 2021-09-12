@@ -61,4 +61,56 @@ ALGO: 3 Pointer appproach
    - Now dont directly swap index 4 and 9 as it will break the order. So shift one by one element.
      arr[] = {-5, 5, -2, 2, 4, 4, 7, 1, 8, 0}
      arr[] = {-5, 5, -2, 2,-8, 4, 7, 1, 8, 0}
+     
+6. Whenever (i || j || k) >= n, STOP the traversal
 */
+
+void rotate(int nums[], int start, int end){
+    int temp = nums[end];
+    for(int i = end-1; i >= start; i--){
+        // assign previous element(eg: end-1) to next element(eg: last element i.e [i+1])
+        nums[i+1] = nums[i];
+    }
+    nums[start] = temp;
+}
+
+int main()
+{
+    int nums[] = {-5, -2, 5, 2, 4, 7, 1, 8, 0, -8};
+    int n = 10;
+    
+    int i=0, j=0, k=0;
+    
+    while(i<n && j<n && k<n){
+        // Even index must have negative no.
+        if(k%2 == 0){
+            // Check if whether a positive no. is present
+            if(nums[k] >= 0){
+                // Find the 1st negative no.
+                i=k;
+                j=k;
+                while(i<n && nums[i]>=0) i++;
+                if(i >= n) break;
+                rotate(nums, i, j);
+            }
+        }
+        
+        // For ODD index
+        else{
+            // If negative no. is present at odd index
+            if(nums[k] < 0){
+                i=k;
+                j=k;
+                while(j<n && nums[j]<0) j++;
+                if(j >= n) break;
+                rotate(nums, i, j);
+            }
+        }
+        
+        k++;
+    }
+    for(auto it: nums){
+        cout<<it<<" ";
+    }
+    return 0;
+}
