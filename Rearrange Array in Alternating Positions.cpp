@@ -34,3 +34,31 @@ int main()
 
     return 0;
 }
+
+// OPTIMAL =====================================================================================
+
+/*
+ALGO: 3 Pointer appproach
+
+1. Initialize 3 pointers:
+    i -> Searches for negative no.
+    j -> Searches for positive no.
+    k -> used to traverse the array
+
+2. On EVEN indexes we have -> negative no.
+      ODD indexes we have  -> positive no.
+
+3. Start traversing the arr using k and check that every index whether has the correct value as mentioned in STEP 2.
+
+4. eg: arr[] = {-5, -2, 5, 2, 4, 7, 1, 8, 0, -8}
+   - Here at ind=1 should be a positive no. but we have negative
+   - Now point 'i' and 'j' at where 'k' is pointing i.e ind=1 and use 'j' to find the next positive no. which is
+     at ind=2. So now swap index 1 and 2 but ORDER must be maintained.
+     arr[] = {-5, 5, -2, 2, 4, 7, 1, 8, 0, -8}
+     
+5. Now at ind= 4 we have positive no. instead of negative no.
+   - So now point 'i' and 'j' at ind=4 and use 'i' to find the next negative no. i.e at ind=9 
+   - Now dont directly swap index 4 and 9 as it will break the order. So shift one by one element.
+     arr[] = {-5, 5, -2, 2, 4, 4, 7, 1, 8, 0}
+     arr[] = {-5, 5, -2, 2,-8, 4, 7, 1, 8, 0}
+*/
