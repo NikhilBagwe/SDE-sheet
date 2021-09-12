@@ -91,7 +91,7 @@ int main()
                 j=k;
                 while(i<n && nums[i]>=0) i++;
                 if(i >= n) break;
-                rotate(nums, i, j);
+                rotate(nums, j, i);
             }
         }
         
