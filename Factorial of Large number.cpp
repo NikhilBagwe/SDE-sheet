@@ -35,22 +35,23 @@ int main()
     // Declare a variable to traverse from 2 to n 
     int val = 2;
     
-    while(val <= n){
+    // eg: n=5
+    while(val <= n){  // 2 3 4 5
         // traverse the vector from right to left
         for(int i=size-1; i>=0; i--){
             // update value in vector
-            int temp = fact[i]*val + carry;
+            int temp = fact[i]*val + carry;                             // 2  6  24  
             // store the last digit at index and add remaining to carry
-            fact[i] = temp%10;
+            fact[i] = temp%10;                             // Remainder -> 2  6  4
             // update carry
-            carry = temp/10;
+            carry = temp/10;                               // quotient  -> 0  0  2
         }
         // If carry is not consumed i.e it is double digit, then insert carry digit by digit into vector
-        while(carry != 0){
-            int a = carry%10;
+        while(carry != 0){                                // at 4th iteration -> 2 
+            int a = carry%10;                             // 2
             // push value to front of vector
-            fact.insert(fact.begin(),a);
-            carry /= 10;
+            fact.insert(fact.begin(),a); 
+            carry /= 10;                                  //  0
             // since we inserted an elemnet the size of vector is increased by 1.
             size++;
         }
