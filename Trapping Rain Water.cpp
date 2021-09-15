@@ -64,3 +64,46 @@ int main()
 
     return 0;
 }
+
+// OPTIMAL  =============================================================== TC = O(n)  ===========================================================================
+
+int main()
+{
+    int a[] = {3, 0, 2, 0, 4};  // waterTrapped = 7
+    int n = 5, waterTrapped=0;
+    
+    int leftMax = 0, rightMax = 0;
+    int left = 0, right = n-1;
+    
+    // Two pointer approach
+    while(left <= right){
+        
+        if(a[left] < a[right]){
+            // when leftMax=0, update leftMax with the new leftMax i.e a[i]
+            if(a[left] > leftMax){
+                leftMax = a[left];
+            }
+            // It means that our current leftMax is greater than current element and also a rightMax of equal or
+            // greater height exists since we got inside this 'if' condition. So we can directly subtract leftMax
+            // from current element a[i].
+            else{
+                waterTrapped += leftMax - a[left];
+            }
+            left++;
+        }
+        
+        else{
+            if(a[right] > rightMax){
+                rightMax = a[right];
+            }
+            else{
+                waterTrapped += rightMax - a[right];
+            }
+            right--;
+        }
+    }
+    
+    cout<<waterTrapped;
+
+    return 0;
+}
