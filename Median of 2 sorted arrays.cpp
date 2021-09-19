@@ -50,7 +50,7 @@ int main()
     return 0;
 }
 
-// OPTIMAL ========================================================================================================================================================
+// OPTIMAL ===================================== Works for equal as well as different size arrays =============================================================================
 
 /*
 ALGO:
@@ -83,3 +83,68 @@ ALGO:
    
 7. For DIFFERENT size arrays, always apply binary search on small size array to avoid out of bound error.
 */
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int medianOfSortedArrays(vector<int> vec1, vector<int> vec2){
+    // When length are different than apply binary search on the shortest length array 
+    if(vec1.size() > vec2.size()){
+        return medianOfSortedArrays(vec2, vec1);
+    }
+    
+    // Store the size of arrays 
+    int n1 = vec1.size();
+    int n2 = vec2.size();
+    
+    // Apply binary search on 1st array i.e vec1
+    int low=0, high=n1;
+    
+    while(low <= high){
+        
+        // Initialize the cuts or partitions
+        int cut1 = low + (high - low) / 2;
+        // cut2 = Total required elements - Already present elements
+        int cut2 = ((n1+n2)/2) - cut1;
+        
+        // Initialize l1, r1, l2, r2 and also check for extreme cases for out of bound errors
+        int l1 = (cut1 == 0) ? INT_MIN : vec1[cut1-1];
+        int l2 = (cut2 == 0) ? INT_MIN : vec2[cut2-1];
+        
+        int r1 = (cut1 == n1) ? INT_MAX : vec1[cut1];
+        int r2 = (cut2 == n2) ? INT_MAX : vec2[cut2];
+        
+        // Check for binary search conditions
+        if(l1 > r2) high=cut1-1;    // Shift cut towards left side
+        
+        else if(l2 > r1) low=cut1+1; // Shift cut towards right side
+        
+        // When both conditions are satisfied return the median as per the size of array
+        else{
+            if((n1+n2)%2 == 0){
+                return ((max(l1, l2) + min(r1, r2))/2);
+            }
+            else{
+                return (min(r1, r2));
+            }
+        }
+        
+    }
+    return 0;
+}
+
+int main()
+{
+    // vector<int> a1 {2, 3, 5, 8}; // 9
+    // vector<int> a2 {10, 12, 14, 16};
+    
+    vector<int> a1 {-5, 3, 6, 12, 15};  // median=3
+    vector<int> a2 {-12, -10, -6, -3, 4, 10};
+    
+    // vector<int> a1 {1, 12, 15, 26, 38};  // 16 
+    // vector<int> a2 {2, 13, 17, 30, 45};
+    
+    cout<<medianOfSortedArrays(a1, a2);
+    
+    return 0;
+}
