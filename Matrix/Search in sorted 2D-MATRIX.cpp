@@ -105,3 +105,54 @@ int main()
 
     return 0;
 }
+
+// BETTER  =========================================================== TC = O(logn) ====================================================================================
+
+#include <bits/stdc++.h>
+using namespace std;
+
+/*
+LOGIC:
+1. Here we are applying an imaginary binary search directly on matrix without storing the elements of matrix into an array
+2. mid / column = gives the ROW number
+   mid % column = gives the COLUMN number
+3. Works on horizontally sorted array
+*/
+
+int main()
+{
+    int r = 4, c = 4;
+    
+    vector<vector<int>> matrix {{1, 3, 5, 7},
+                                {10, 11, 16, 20},
+                                {23, 30, 34, 50}};
+    
+    int flag = 0, target = 23;
+    
+    // Store the imaginary low and high pointers for binary search
+    int i = 0;
+    int j = (r*c)-1;
+    
+    // Binary search
+    while(i <= j){
+        int mid = (i+j)/2;
+        
+        if(matrix[mid/c][mid%c] == target){
+            cout<<"Element found at : "<<mid/c<<" "<<mid%c;
+            flag = 1;
+            break;
+        }
+        
+        else if(matrix[mid/c][mid%c] > target){
+            j = mid-1;
+        }
+        
+        else{
+            i = mid+1;
+        }
+    }
+    
+    if(flag == 0) cout<<"Element absent";
+
+    return 0;
+}
