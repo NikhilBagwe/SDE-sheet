@@ -46,3 +46,43 @@ int main()
     cout<<row<<" "<<ans;
     return 0;
 }
+
+// OPTIMAL =========================================================== TC = O(n + m) ===================================================================================
+
+/*
+LOGIC :
+1. Since all rows are sorted we know that the last element of each row will be the maximum element present in that row.
+2. Thus, we will check the last element of each row and if it is not 1 then skip to next row.
+*/
+
+int main()
+{
+    int r = 4, c = 4;
+    vector<vector<int>> matrix {{0, 0, 0, 1},
+                                {0, 0, 1, 1},
+                                {1, 1, 1, 1},
+                                {0, 1, 1, 1}};
+    
+    int col = c-1;
+    int row = -1; 
+    
+    for(int i=0; i<r; i++){
+        // iterate the row backwards from 'col' to 0
+        for(int j=col; j>=0; j--){
+            if(matrix[i][j] == 1){
+                // Store the row number with maximum 1s in it
+                row = i;
+                // decrement 'col' as we will not check that column again for the next rows
+                col--;
+            }
+            
+            // If we see 0, than skip it 
+            else{
+                break;
+            }
+        }
+    }
+    
+    cout<<row;
+    return 0;
+}
