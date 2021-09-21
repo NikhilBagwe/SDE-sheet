@@ -63,3 +63,45 @@ int main()
 
     return 0;
 }
+
+// OPTIMAL ==================================== Horizontally as well as vertically sorted matrix  =====================================================================
+
+int main()
+{
+    int r = 4, c = 4;
+    
+    // Horizontally as well as vertically sorted matrix
+    vector<vector<int>> matrix {{10, 20, 30, 40},
+                                {11, 21, 36, 43},
+                                {25, 29, 39, 49},
+                                {50, 60, 70, 80}};
+    
+    int flag = 0, target = 50;
+    
+    // Set the pointer on 1st row's last Element i.e 40
+    int i=0, j=c-1;
+    
+    while(i<r && j>=0){
+        if(matrix[i][j] == target){
+            cout<<"Element found at : "<<i<<" "<<j;
+            flag = 1;
+            break;
+        }
+        
+        // If the value is greater, it means the target Element is present towards left of the current Element
+        // so go to the previous column
+        else if(matrix[i][j] > target){
+            j--;
+        }
+        
+        // If the value is smaller, it means the target Element is present towards downwards of current elment 
+        // So go to the next row.
+        else{
+            i++;
+        }
+    }
+    
+    if(flag == 0) cout<<"Element absent";
+
+    return 0;
+}
