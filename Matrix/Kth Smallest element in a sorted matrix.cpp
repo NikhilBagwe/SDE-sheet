@@ -25,3 +25,64 @@ int main()
 
     return 0;
 }
+
+// OPTIMAL ========================================================================================================================================================
+
+/*
+ALGO:
+eg: {{1  5  9 }
+     {10 11 13}
+     {12 13 15}}
+1. Since the matrix is row and column wise sorted our range is 1 to 15.
+2. So we can apply nested binary search 
+*/
+
+int main()
+{
+    vector<vector<int>> mat {{16, 28, 60, 64},
+                             {22, 41, 63, 91},
+                             {27, 50, 87, 93},
+                             {36, 78, 87, 94 }};
+                           
+    int k=3, n=mat.size();
+    
+    int r = mat.size();
+    int c = mat[0].size();
+    
+    // Defining the range as startVal and endVal i.e the 1st element and last element of matrix
+    int startVal = mat[0][0];
+    int endVal = mat[r-1][c-1];
+    int midVal = 0;
+
+    while(startVal <= endVal){
+        // Range based formula to find the mid element for binary search
+        midVal = (startVal+endVal)/2;
+        
+        int ans = 0;
+        // Traversing the matrix row-wise
+        for(int i=0; i<r; i++){
+            
+            // applying binary search on each row 
+            int lo = 0, hi = c-1, mid = 0;
+            while(lo <= hi){
+                // Index based formula to find the mid element for binary search
+                mid = lo + (hi-lo) / 2;
+                if(mat[i][mid] <= midVal){
+                    lo = mid + 1;
+                }
+                else{
+                    hi = mid - 1;
+                }
+            }
+            ans += lo;
+            cout<<ans<<endl;
+        }
+        
+        if(ans < k) startVal = midVal + 1;
+        else endVal = midVal - 1;
+    }
+    
+    cout<<startVal;
+    
+    return 0;
+}
