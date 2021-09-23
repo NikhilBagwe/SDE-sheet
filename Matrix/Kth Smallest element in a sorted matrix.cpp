@@ -58,6 +58,7 @@ int main()
         // Range based formula to find the mid element for binary search
         midVal = (startVal+endVal)/2;
         
+        // 'ans' will store the count of elements that are less than or equal to midVal in the whole matrix
         int ans = 0;
         // Traversing the matrix row-wise
         for(int i=0; i<r; i++){
@@ -74,6 +75,8 @@ int main()
                     hi = mid - 1;
                 }
             }
+            // 'lo' stores how many values are <= midVal in the current row on which binary search is applied and that value is added to 'ans' which stores the total count of
+            // elements that are <= midVal in all rows i.e the whole matrix.
             ans += lo;
             cout<<ans<<endl;
         }
