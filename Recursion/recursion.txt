@@ -1,1 +1,19 @@
-demo file nsckdsn
+Why use Recursion ?
+-> It helps us in solving bigger/complex problems in a simple way.
+   You can convert recursion solutions into iterative solutions (to get more optimized solution) and vice versa.
+   NOTE : Space complexity is not constant because of recursive calls.
+
+
+How a function is executed ?
+-> When the function is called , a certain memory is allocated to it and it is pushed into stack also it starts executing.
+   While the function is not finished executing it will remain in the stack.
+   When a function finishes executing, it is removed from the stack an the flow of program is restored to where it was called.
+   
+
+Base condition :
+- It is used to stop the recursive function call.
+- Prevents the function from going into infinite call loop.
+- As we know every function call takes some memory in the stack, so does recursive calls do.
+
+-> NO BASE CONDITION = Function calls will keep happening, and stack will be filled again and again and at some point the stack memory of computer will exceed, leading to 
+   " Stackoverflow error ".
