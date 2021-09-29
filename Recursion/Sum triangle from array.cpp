@@ -13,7 +13,7 @@ void printTri(vector<int> &arr, int n){
     printTri(temp, n-1);
     
     for(int i=0; i<n; i++){
-        if(n==1){
+        if(i == n-1){
             cout<<arr[i]<<" ";
         }
         else{
