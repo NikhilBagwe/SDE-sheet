@@ -1,5 +1,7 @@
-#include <bits/stdc++.h>
+// ================================================================== TC = 2^target * k ==============================================================================
+// k -> since we are putting data structure into another data structure i.e 'ds' into 'ans'
 
+#include <bits/stdc++.h>
 using namespace std;
 
 void findCombination(int ind, int target, vector<int> &arr, vector<vector<int>> &ans, vector<int> &ds){
@@ -39,6 +41,7 @@ vector<vector<int>> combinationSum(vector<int>& candidates, int target){
     
     findCombination(0, target, candidates, ans, ds);
     
+    // Print all the combinations stored in 'ans'
     for(auto it : ans){
         for(auto num : it){
             cout<<num<<" ";
