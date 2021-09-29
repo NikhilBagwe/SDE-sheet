@@ -12,8 +12,14 @@ How a function is executed ?
 
 Base condition :
 - It is used to stop the recursive function call.
+- Base condition is represented by answers we already know, eg: fib(0)=0, fib(1)=1 in fibonacci series
 - Prevents the function from going into infinite call loop.
 - As we know every function call takes some memory in the stack, so does recursive calls do.
 
 -> NO BASE CONDITION = Function calls will keep happening, and stack will be filled again and again and at some point the stack memory of computer will exceed, leading to 
    " Stackoverflow error ".
+
+
+-> RECURRENCE RELATION :
+- When you write recursion in a formula it is called recurrence relation.
+- eg: fibonacci number -> fib(n) = fib(n-1) + fib(n-2)
