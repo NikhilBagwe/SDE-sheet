@@ -37,8 +37,26 @@ Base condition :
   eg: you pick 'a' or not pick 'a'
 * You will get your answers in the leaf node when your i/p becomes empty.
 
+-> Ways to approach a recursion problem:
+1. Recurssive tree - IP/OP method (when you know what decision to take on the choices you have) - eg. subset problem
+2. Base case - Induction - Hypothesis (Make i/p smaller) - used in trees and linked list problems
+3. Choice diagram (DP)
 
+-> BASE CASE - HYPOTHESIS - INDUCTION METHOD : 
 
+void printNum(int n){
+    // Base condition -> smallest valid input
+    if(n==1){
+        cout<<n<<" ";
+        return;
+    }
+    
+    // Hypothesis -> Tells what your function is going to do. eg. printNum(n-1) is going to print numbers from 1 to n-1
+    printNum(n-1);
+    
+    // Induction -> prints the remaining elements. eg. in above step no. are printed upto n-1, so n remains. That 'n' is printed by induction step
+    cout<<n<<" ";
+}
 
 
 
