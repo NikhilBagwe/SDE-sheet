@@ -23,3 +23,25 @@ Base condition :
 -> RECURRENCE RELATION :
 - When you write recursion in a formula it is called recurrence relation.
 - eg: fibonacci number -> fib(n) = fib(n-1) + fib(n-2)
+
+====================================================================== Aditya verma playlist ================================================================
+
+- In recursion, input automatically gets smaller based on the decision taken. 
+- In recursion we will be given some choices, and you have to take the decision based on the available choices.
+- In a problem, when we have choices an decisions to make means we can apply recursion.
+
+- RECURSSIVE TREE using IP/OP method:
+
+* No. of branches in a tree == no. of choices
+* When you move to the next level of tree, you take a decision between the choices available and thus, the i/p will become smaller automatically.
+  eg: you pick 'a' or not pick 'a'
+* You will get your answers in the leaf node when your i/p becomes empty.
+
+
+
+
+
+
+
+
+
