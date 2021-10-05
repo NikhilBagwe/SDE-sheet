@@ -14,3 +14,7 @@ We can say that ,
 - Every Substring can be a subsequence and subset but vice versa is not possible.
 - Every Subsequence can be a subset but vice versa is not possible.
 - Subset can be anything as order does not matter.
+
+--> If the question states to print Powerset, Subset or subsequence you have to print the subsets only.
+
+--> If it is mentioned to display output lexiographically (Lexicographic order is the way of ordering words based on the alphabetical order of their component letters. It is also     known as lexical order, dictionary order, and alphabetical order.) than store all subsets in a vector and sort it.
