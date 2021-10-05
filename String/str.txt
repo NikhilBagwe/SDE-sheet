@@ -1,1 +1,16 @@
-Demo text string.
+--> string str = "Microsoft"
+
+* Substring : Group of consecutive elements. Substring can also be a subsequence but vice versa is not possible.
+  eg : Mic, Micro, ros, etc
+
+* Subsequence : We can skip certain characters in subsequence but sequence matters for example we cannot write 'ciM' as the order is changed.
+  eg: st, Miro, Mit, etc
+  Formula = 2 ^ (length of string)
+
+* Subset : Here the sequence does not matters.
+  eg: ciM, cro, fos, etc.
+  
+We can say that ,
+- Every Substring can be a subsequence and subset but vice versa is not possible.
+- Every Subsequence can be a subset but vice versa is not possible.
+- Subset can be anything as order does not matter.
