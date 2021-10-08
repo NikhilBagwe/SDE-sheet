@@ -1,6 +1,7 @@
 Dynamic Programming Notes: 
 
 * DP is enhanced recursion.
+* DP = Recursion + Storage (memoization)
 * Recursion is parent of DP.
 * Whenever a recursive function is making 2 calls i.e we have 2 choices, there is a proability that we can apply DP there. 
 
@@ -9,8 +10,29 @@ Dynamic Programming Notes:
 1. All methods used to find a recursive problem are also applicable for DP.
 2. The problem asks you to find something OPTIMAL. eg: maximum, minimum, largest, etc
 
--> Approach to a DP problem:
+-> Approach to a DP problem: --------------------------------------------------------------------------------------------------------------------------------------------
 
 1. Write it's RECURSIVE function.
 2. Use memoization.
 3. And then if you want than make Tabulation DP table i.e Top-Down
+
+=> 0 1 Knapsack Problem : ------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Types :
+* Fractional knapsack - Greedy approach
+  eg : Suppose if the capacity of bag is 10kg and out of it 9kg is full and we have a item of weight 2kg, than we can put fraction of item i.e 1kg into bag
+  
+* 0/1 knapsack - DP
+  eg : From above example, here we can either remove an item from bag to make it 8kg than put our 2kg item in it, or don't put the 2kg item at all in the bag
+  0 -> We don't put the item at all in the bag
+  1 -> We put the item into the bag
+  
+* Unbounded knapsack - we can put one item multiple times in the bag.
+
+Similar problem with minor changes:
+1. Subset sum
+2. Equal sum partition
+3. Count of subset sum
+4. Minimum subset sum difference
+5. Target sum
+6. No. of subset with given difference
