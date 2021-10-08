@@ -1,1 +1,16 @@
 Dynamic Programming Notes: 
+
+* DP is enhanced recursion.
+* Recursion is parent of DP.
+* Whenever a recursive function is making 2 calls i.e we have 2 choices, there is a proability that we can apply DP there. 
+
+-> How to identify a DP problem :
+
+1. All methods used to find a recursive problem are also applicable for DP.
+2. The problem asks you to find something OPTIMAL. eg: maximum, minimum, largest, etc
+
+-> Approach to a DP problem:
+
+1. Write it's RECURSIVE function.
+2. Use memoization.
+3. And then if you want than make Tabulation DP table i.e Top-Down
