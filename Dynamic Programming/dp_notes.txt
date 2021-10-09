@@ -42,9 +42,19 @@ Similar problem with minor changes:
 * In this approach we want to eliminate the recursive calls that we made in case of memoization.
 * We will create a matrix and store values into it iteratively and only with the help of that table we will find the answer.
 
+===================================================== SANKET SINGH - playlist ==================================================================================
 
+-> Paradigms of Algorithms : 
 
+1. Brute force
+2. Divide and Conquer
+3. Greedy 
+4. Dynamic Programming
 
+==>  Dynamic Programming -------------------------------------------------
+
+* It is a mathematical / programming technique which is used as an optimization method.
+* It focuses on the fact that if we have already computed something, then we should not recompute it.
 
 
 
