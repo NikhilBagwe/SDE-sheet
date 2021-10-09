@@ -14,18 +14,23 @@ bool subsetSum(vector<int> &arr, int sum, int n){
         t[0][i] = false;
     }
     
-    // From table 
+    // From tabulation table -> i=n, j=sum
     for(int i=1; i<n+1; i++){
         for(int j=1; j<sum+1; j++){
+            
+            // If the current element in the array is <= current sum i.e 'j' -> We Pick it OR Not Pick the element
             if(arr[i-1] <= j){
                 t[i][j] = t[i-1][j-arr[i-1]] || t[i-1][j];
             }
+            
+            // (current element > j) -> Skip the element
             else{
                 t[i][j] = t[i-1][j];
             }
         }
     }
     
+    // return the value stored in last cell
     return t[n][sum];
 }
 
