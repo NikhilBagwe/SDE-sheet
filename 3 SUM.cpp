@@ -39,6 +39,32 @@ int main()
     return 0;
 }
 
+// OR ------------------------ Same as above logic but clean code ----------------------------
+
+int main()
+{
+    int a[] = {1, 4, 45, 6, 10, 8};
+    int n = 6, x = 15;
+    sort(a, a+n);
+    
+    for(int i=0; i<n; i++){
+        int target = x-a[i];
+        
+        int s=i+1, e=n-1;
+        while(s<=e){
+            int sum = a[s]+a[e];
+            if(sum == target){
+                cout<<a[i]<<" "<<a[s]<<" "<<a[e];
+                break;
+            }
+            else if(sum > target) e--;
+            else s++;
+        }
+    }
+
+    return 0;
+}
+
 // OPTIMAL - 2 ===================================================== TC = O(n) , SC = O(n)  =========================================================================
 
 int main()
