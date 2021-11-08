@@ -16,7 +16,7 @@ int main()
     return 0;
 }
 
-// === DYNAMIC PROGRAMMING ================================================================================================================================================
+// === Memoization DP ================================================================================================================================================
 
 int fibo(int n, vector<int> &dpArray){
     // Base case - smallest sub-problem for which we already know the answer
@@ -37,6 +37,31 @@ int main()
     int n = 5;
     vector<int> arr(100, -1);
     cout<<fibo(5, arr);
+
+    return 0;
+}
+
+// === Tabulation DP ================================================================================================================================================
+
+// 1-D array
+vector<int> dp;
+
+int fiboBU(int n){
+    vector<int> dp(n+1, 0);
+    // Base case
+    dp[0] = 0;
+    dp[1] = 1;
+    
+    for(int i=2; i<=n; i++){
+        dp[i] = dp[i-1] + dp[i-2];
+    }
+    
+    return dp[n];
+}
+
+int main()
+{
+    cout<<fiboBU(6);
 
     return 0;
 }
