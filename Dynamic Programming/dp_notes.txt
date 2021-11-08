@@ -78,6 +78,8 @@ Similar problem with minor changes:
 ==> Memoization vs Tabulation --------------------------------------------------------------------------------------------------------
 
 - Memoization has constraints of -> Stack space causing Stackoverflow as call stack has a certain capacity
-- Memoization is generally more intuitive to implement especially when we don't know the solution to subproblems, whereas tabulation requires us to know the solutions, or bottom, in advance, in order to build our way up.
-- If the original problem requires all subproblems to be solved, tabulation usually outperformes memoization by a constant factor. This is because tabulation has no overhead for recursion and can use a preallocated array
+- Memoization is generally more intuitive to implement especially when we don't know the solution to subproblems, whereas tabulation requires us to know the solutions,
+  or bottom, in advance, in order to build our way up.
+- If the original problem requires all subproblems to be solved, tabulation usually outperformes memoization by a constant factor. This is because tabulation has 
+  no overhead for recursion and can use a preallocated array
 
