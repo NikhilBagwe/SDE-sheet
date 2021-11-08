@@ -56,11 +56,28 @@ Similar problem with minor changes:
 * It is a mathematical / programming technique which is used as an optimization method.
 * It focuses on the fact that if we have already computed something, then we should not recompute it.
 
+==> Memoization : TOP-DOWN DP ---------------------------------------------------------
 
+* Memoization or memoisation is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the 
+  cached/stored result when the same inputs occur again.
+* Helps to improve performance of algorithm.
+* Top-down approach focuses on breaking down a big problem into smaller and understandable chunks.
+* Normally in the Time complexity is exponential using only Recursion. eg: In fibonacci series - TC =  O(2^n)
+* In DP, Time complexity becomes linear. eg: In fibonacci series - TC =  O(n) using DP.
+* Space complexity = Recursive call stack + Memo array => O(n)
+  Recursive call stack -> Maximum depth your recursive tree goes into which is O(n)
 
+==> Tabulation : BOTTOM UP --------------------------------------------------------------
 
+* In Tabulation,  we go from smaller subproblem to bigger subproblem.
+* Smaller sub problems are already computed before solving the bigger sub problem.
+  eg: In fibonacci, even before coming to fibo(5), fibo(3) and fibo(4) will be already computed unlike the Memoization where we 1st come to f(5) then go down to compute f(4)
+* We 1st compute the trivial/smallest sub problem
+* Tabulation is an ITERATIVE approach.
 
+==> Memoization vs Tabulation --------------------------------------------------------------------------------------------------------
 
-
-
+- Memoization has constraints of -> Stack space causing Stackoverflow as call stack has a certain capacity
+- Memoization is generally more intuitive to implement especially when we don't know the solution to subproblems, whereas tabulation requires us to know the solutions, or bottom, in advance, in order to build our way up.
+- If the original problem requires all subproblems to be solved, tabulation usually outperformes memoization by a constant factor. This is because tabulation has no overhead for recursion and can use a preallocated array
 
