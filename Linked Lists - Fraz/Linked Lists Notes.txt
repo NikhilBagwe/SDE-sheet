@@ -1,11 +1,11 @@
 => USE OF LL: -------------------------------------------------------------------------
 
 1. To implement Stacks and Queues we either use Arrays or Linked lists.
-
 2. Image gallery app - we can switch/toggle between images by swiping Left or Right. This is an example of Doubly LL.
-
 3. Music Player - You can switch between songs similar to gallery app. This is an example of Doubly LL.
-
 4. Web Browser - We can use the left and right arrows present at the topmost left corner of the browser to navigate between pages. This is an example of Doubly LL.
-
 5. Hashmap and Hashsets - Whenever there is a collision, we use a technique called chaining to handle it in which we use Doubly LL.
+
+=> MEMORY LEAKAGE PROBLEM :
+
+- Whenever you want to delete a node form LL, after deleting it make sure you free the memory occupied by it to avoid memory leakage.
