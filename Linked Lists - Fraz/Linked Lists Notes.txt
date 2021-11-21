@@ -9,3 +9,20 @@
 => MEMORY LEAKAGE PROBLEM :
 
 - Whenever you want to delete a node form LL, after deleting it make sure you free the memory occupied by it to avoid memory leakage.
+
+=> ARRAYS VS LINKED LISTS : ----------------------------------
+
+* In case of an array, the memory allocator will search for a continous memory space of required array size for eg: arr[10] so 7x4 = 40 bytes of memory chunk. If it doesn't find 
+  it the array cannot be created. But in case of LL, the allocator will search for only 8 bytes of memory at a time to create one node. So its relatively easy for allocator
+  to search for 8 bytes rather than 40 bytes. Thus , LL are more "MEMORY EFFICENT".
+  
+* We have to predefine an array before assigning values in it. So if more values are needed to be stored in the array later, we cannot increase its size. But we can create LL
+  dynamically as the input data comes we can create a new node.
+  
+* We can randomly access any position in an array by using the index of it directly eg: arr[5]. But in case of LL we have to travel the whole LL to reach the required node. Thus
+  it takes O(n) time to access a certain node in LL.
+  
+* Deletion operation can be performed easily in LL by just deleting the node at given position in O(1) time(When we are standing on the node to be deleted). But in case of array,
+  on deleting a value at a certain index we will have to shift the remaining elements and thus takes O(n) .
+  
+* We can apply algorithms such as Merge sort, Binary search, etc. on arrays directly as they require Random access. Thus they can't be use on LL.
