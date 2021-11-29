@@ -1,3 +1,7 @@
+// ============================================= TC = SC = O(n) ================================================================================================
+
+// TC = O(n) --- As we traverse for each node respectively
+// SC = O(n) --- At the worst case our queue might store all the nodes so it's O(n) where n->no. of nodes
 
 class Solution {
 public:
