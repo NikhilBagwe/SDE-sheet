@@ -32,3 +32,42 @@ public:
         return root;
     }
 };
+
+// OPTIMAL =============================================================== TC = SC = O(n) ==========================================================================
+
+/*
+- We use dfs traversal.
+
+- We first go to left as much as possible and if we find anyone of 'p or q' node we return the node.
+- Same is done for right as well when left traversal is done.
+
+- In case we, NULL from the left and a valid node from right or vice versa, we return the valid node.
+- When both left and right are not NULL, we got our LCA.
+*/
+
+class Solution {
+public:
+    
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        // Base case - when current node is same as anyone of 'p' or 'q' nodes or NULL
+        if(root == NULL || root == p || root == q){
+            return root;
+        }
+        
+        TreeNode* left = lowestCommonAncestor(root->left, p, q);
+        TreeNode* right = lowestCommonAncestor(root->right, p, q);
+        
+        // while traversing back, if we get 'NULL' returned from left , then return 'right' node
+        if(left == NULL){
+            return right;
+        }
+        else if(right == NULL){
+            return left;
+        }
+        // When both left and right are not NULL , we got our result
+        else{
+            return root;
+        }
+    }
+};
+
