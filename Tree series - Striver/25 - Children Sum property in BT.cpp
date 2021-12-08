@@ -3,6 +3,16 @@
 
 // OPTIMAL =========================================================== TC = O(n) , SC = O(H) =======================================================================
 
+/*
+- Here we take major advantage of the fact that we can increase the node's data value by '1' any number of times, but we can't reduce it.
+
+- The idea is that, we start from the root node and add up the data of child nodes and store it in 'child' then compare it with root node's data. If the 'child'
+  data is less than root's data than we assign the root's data to both child nodes and we do so on for the rest nodes also.
+  
+- After reaching the leaf nodes, while backtracking we start assigning the addition of left and right child nodes data to there root node, thus making a tree following child 
+  sum property.
+*/
+
 void changeTree(BinaryTreeNode < int > * root) {
     if(root == NULL) return;
     
