@@ -52,7 +52,7 @@ public:
                 st.pop();
                 count++;
                 // Print/storing the value is not required as we have counter so we check if (count == k)
-                and return node->val or pass the node towards right as per inorder traversal method
+                // and return node->val or pass the node towards right as per inorder traversal method
                 if(count == k) return node->val;
                 node = node->right;
             }
@@ -67,5 +67,5 @@ public:
 
 - You need to do 2 traversals 
 - First to calculate the 'N' no. of nodes in tree
+- Now N - k will give us at which count we will get our kth largest element.
 - Second traversal to find the N-kth element which will be our kth largest element.
-- 
